@@ -2,13 +2,13 @@ package lojaDAO;
 
 public class CadastroVO {
 	
-	public String Nome;
-	public int CPF;
-	public int Telefone;
-	public String Email;
-	public double Salario;
-	public String Função;
-	public String Endereço;
+	private  String Nome;
+	private  int CPF;
+	private  int Telefone;
+	private  String Email;
+	private  double Salario;
+	private  String Função;
+	private  String Endereço;
 	
 	
 	public String getNome() {
