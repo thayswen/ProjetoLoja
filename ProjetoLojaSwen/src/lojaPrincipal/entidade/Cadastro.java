@@ -9,7 +9,19 @@ public class Cadastro {
 	private double salario;
 	private String funcao;
 	private String endereco;
+	private String nomeProduto;
+	private double valor;
+	private int idProduto;
 
+
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
+	
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -65,4 +77,21 @@ public class Cadastro {
 	public void setEndereço(String endereço) {
 		this.endereco = endereço;
 	}
+	
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	public int getIdProduto() {
+		return idProduto;
+	}
+
+	public void setIdProduto(int idProduto) {
+		this.idProduto = idProduto;
+	}
+	
 }

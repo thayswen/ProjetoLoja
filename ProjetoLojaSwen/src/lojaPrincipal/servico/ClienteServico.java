@@ -24,6 +24,10 @@ public class ClienteServico {
 		nome = input.nextLine();
 		cadastro.setNome(nome);
 		
+		System.out.println("Insira o seu email do cadastro: ");
+		email = input.nextLine();
+		cadastro.setEmail(email);
+		
 		System.out.println("Insira o seu CPF: ");
 		cpf = input.nextInt();
 		cadastro.setCPF(cpf);
@@ -32,12 +36,18 @@ public class ClienteServico {
 		telefone = input.nextInt();
 		cadastro.setTelefone(telefone);
 		
-		System.out.println("Insira o seu email do cadastro: ");
-		email = input.nextLine();
-		cadastro.setEmail(email);
-		
+		System.out.println("---------");
 		
 		dao.incluirCadastro(cadastro);
+		
+
+	}
+	
+	public void atualizarCliente() {
+		
+	}
+	
+	public void deletarCliente() {
 
 	}
 	

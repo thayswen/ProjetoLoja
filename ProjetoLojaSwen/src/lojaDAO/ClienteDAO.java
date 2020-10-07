@@ -21,6 +21,10 @@ public class ClienteDAO {
 		
 	}
 	
+	public void atualizarCadastro(Cadastro cadastro) {
+
+	}
+	
 	public List<Cliente> mostrarCadastro(){
 		return listaCliente;
 		
