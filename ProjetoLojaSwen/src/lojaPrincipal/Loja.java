@@ -1,7 +1,10 @@
 package lojaPrincipal;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+import lojaPrincipal.entidade.Cliente;
 import lojaPrincipal.servico.ClienteServico;
 import lojaPrincipal.servico.ProdutoServico;
 
@@ -11,6 +14,7 @@ public class Loja {
 	ClienteServico servicoCliente;
 	ProdutoServico servicoProduto;
 	boolean executar;
+	List<Cliente> listaCliente;
 
 	public static void main(String[] args) {
 		new Loja();
@@ -21,6 +25,7 @@ public class Loja {
 		input = new Scanner(System.in);
 		executar = true;
 		servicoCliente = new ClienteServico();
+		listaCliente = new ArrayList<>();
 		
 		System.out.println("Você quer cadastrar:\n");
 		System.out.println("1 - Cliente");

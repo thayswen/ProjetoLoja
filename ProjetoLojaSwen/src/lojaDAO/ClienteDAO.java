@@ -21,8 +21,8 @@ public class ClienteDAO {
 		
 	}
 	
-	public void atualizarCadastro(Cadastro cadastro) {
-
+	public void atualizarCadastro(int indice, String novoNome) {
+		listaCliente.get(indice).getCadastro().setNome(novoNome);
 	}
 	
 	public List<Cliente> mostrarCadastro(){
