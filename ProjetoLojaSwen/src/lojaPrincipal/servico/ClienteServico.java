@@ -44,13 +44,7 @@ public class ClienteServico {
 
 	}
 
-	private String obterProximoValor() {
-		return input.nextLine();
-	}
 
-	private Integer obterProximoValorInteiro() {
-		return Integer.valueOf(input.nextLine());
-	}
 
 	public void atualizarCliente() {
 		List<Cliente> listaCliente = dao.mostrarCadastro();
@@ -66,6 +60,7 @@ public class ClienteServico {
 					nome = entrada.nextLine();
 					int indice = listaCliente.indexOf(cliente);
 					dao.atualizarCadastro(indice, nome);
+					System.out.println("O cliente " + nome + " foi atualizado com sucesso! ");
 				}
 			}
 			if (encontrou == false) {
@@ -73,6 +68,63 @@ public class ClienteServico {
 			}
 
 		}
+		if (escolha.equals("2")) {
+			System.out.println("Insira o email que deseja alterar: ");
+			String emailPesquisa = opcao.nextLine();
+			for (Cliente cliente : listaCliente) {
+				if (emailPesquisa.equals(cliente.getCadastro().getEmail())) {
+					encontrou = true;
+					System.out.println("Insira o novo email do cadastro: ");
+					email = entrada.nextLine();
+					int indice = listaCliente.indexOf(cliente);
+					dao.atualizarCadastroEmail(indice, email);
+				}
+			}
+			if (encontrou == false) {
+				System.out.println("Não existe cliente cadastrado para atualizar!!");
+			}
+
+		}
+		
+		if (escolha.equals("3")) {
+			System.out.println("Insira o CPF que deseja alterar: ");
+			Integer cpfPesquisa = opcao.nextInt();
+			for (Cliente cliente : listaCliente) {
+				if (cpfPesquisa.equals(cliente.getCadastro().getCPF())) {
+					encontrou = true;
+					System.out.println("Insira o novo CPF do cadastro: ");
+					cpf = entrada.nextInt();
+					int indice = listaCliente.indexOf(cliente);
+					dao.atualizarCadastroCPF(indice, cpf);
+				}
+			}
+			if (encontrou == false) {
+				System.out.println("Não existe cliente cadastrado para atualizar!!");
+			}
+
+		}
+		
+		if (escolha.equals("4")) {
+			System.out.println("Insira o Telefone que deseja alterar: ");
+			Integer telefonePesquisa = opcao.nextInt();
+			for (Cliente cliente : listaCliente) {
+				if (telefonePesquisa.equals(cliente.getCadastro().getTelefone())) {
+					encontrou = true;
+					System.out.println("Insira o novo Telefone do cadastro: ");
+					telefone = entrada.nextInt();
+					
+					
+					int indice = listaCliente.indexOf(cliente);
+					dao.atualizarCadastroTelefone(indice, telefone);
+				}
+			}
+			if (encontrou == false) {
+				System.out.println("Não existe cliente cadastrado para atualizar!!");
+			}
+
+		}
+		
+		
 	}
 
 	private String menuEscolha() {
@@ -102,5 +154,13 @@ public class ClienteServico {
 		}
 
 		return listaCliente;
+	}
+	
+	private String obterProximoValor() {
+		return input.nextLine();
+	}
+
+	private Integer obterProximoValorInteiro() {
+		return Integer.valueOf(input.nextLine());
 	}
 }
